@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Navbar, Home } from "./components";
-import axios from "axios";
 import useFetch from "./utils/useFetch";
 
 export const DataContext = React.createContext();

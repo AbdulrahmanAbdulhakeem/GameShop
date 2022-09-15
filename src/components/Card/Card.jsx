@@ -7,7 +7,6 @@ function Card({game,cartArray,setCartArray}) {
 
   const handleAddToCart = (productId) => {
     if(cartArray.includes(productId)){
-      return;
     }else{
       newCartArray.push(productId)
       console.log(newCartArray)

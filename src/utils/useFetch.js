@@ -8,7 +8,6 @@ function useFetch(url) {
   const fetchData = async () => {
     try{
         const response = await axios.get(url)
-        // console.log(response.data.results)
         setData(response.data.results)
         setIsPending(false)
     }catch(err){
