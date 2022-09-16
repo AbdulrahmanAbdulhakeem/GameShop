@@ -1,12 +1,13 @@
-import React,{useState} from "react";
+import React,{useState, useContext} from "react";
 import gameLogo from "../../assets/gamepad.jpg";
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Badge from '@mui/material/Badge';
+import { DataContext } from "../../App";
 
 
 function Navbar() {
+  const {cartArray} = useContext(DataContext)
     const [search, setSearch] = useState("");
-
   return (
     <div className="navbar">
       <div className="head-container">
@@ -25,7 +26,7 @@ function Navbar() {
       </form>
       </div>
       <div className="cart-container">
-      <Badge badgeContent={4} color="primary">
+      <Badge badgeContent={cartArray.length} color="primary">
       <ShoppingBagIcon />
     </Badge>
         </div>

@@ -13,6 +13,7 @@ function App() {
   } = useFetch(
     `https://api.rawg.io/api/games?key=${process.env.REACT_APP_SECRET_API_KEY}`
   );
+  console.log(games)
   return (
     <div className="App">
       <DataContext.Provider value={{games,cartArray,setCartArray}}>

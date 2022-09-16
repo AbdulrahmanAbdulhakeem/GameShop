@@ -21,6 +21,11 @@ code {
   font-family: "Montserrat", sans-serif;
 }
 
+span{
+  font-weight: bolder;
+  font-size:large ;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;

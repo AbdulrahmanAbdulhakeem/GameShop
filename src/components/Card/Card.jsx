@@ -6,10 +6,10 @@ let newCartArray = []
 function Card({game,cartArray,setCartArray}) {
 
   const handleAddToCart = (productId) => {
-    if(cartArray.includes(productId)){
-    }else{
-      newCartArray.push(productId)
-      console.log(newCartArray)
+    if(!cartArray.includes(productId)){
+      newCartArray = [...cartArray , productId]
+      setCartArray(newCartArray)
+      console.log(cartArray)
     }
   }
 
@@ -31,6 +31,7 @@ function Card({game,cartArray,setCartArray}) {
           <AddShoppingCartIcon onClick={() => handleAddToCart(game.id)} />
         </div>
         </div>
+        <span>${(game.rating + game.rating_top).toFixed(2)}</span>
       </div>
     </div>
   )
