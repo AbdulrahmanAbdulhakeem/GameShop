@@ -21,9 +21,9 @@ code {
   font-family: "Montserrat", sans-serif;
 }
 
-span{
+span {
   font-weight: bolder;
-  font-size:large ;
+  font-size: large;
 }
 
 .navbar {
@@ -53,41 +53,40 @@ span{
 .search-bar {
   top: 10px;
   height: 45px;
-  width: 55%;
+  width: 50%;
   padding: 10px;
   border: 2px solid #333;
   border-radius: 5px;
-  margin-top:35px ;
+  margin-top: 35px;
 }
 
-.body-container{
+.body-container {
   margin: 1rem 1.5rem;
   width: 100%;
 }
 
-.body-container h1{
+.body-container h1 {
   margin-left: 1rem;
 }
 
-.card-container{
+.card-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.card{
-  margin:1rem 1.5rem 0 0;
+.card {
+  margin: 1rem 1.5rem 0 0;
   padding: 20px;
   border: 1px solid #333;
   border-radius: 10px;
 }
 
-.card img{
+.card img {
   height: 250px;
   width: 250px;
   justify-content: center;
   align-content: center;
   border-radius: 1rem;
-
 }
 
 .card-details {
@@ -95,13 +94,73 @@ span{
   justify-content: space-between;
 }
 
-
-
-.cart-icon{
+.cart-icon {
   padding-top: 9px;
 }
 
-.card-content h4{
-  padding-top:10px;
+.cart-icon :hover {
+  cursor: pointer;
+}
+
+.card-content h4 {
+  padding-top: 10px;
   font-size: small;
+}
+
+.game-details {
+  display: block;
+  width: 60%;
+  margin: 3rem auto 0 auto;
+  line-height: 1.5rem;
+  height: 100vh;
+}
+
+.game-details img {
+  width: 100%;
+  height: 60%;
+  margin-right: 1rem;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+
+.content-detail h2,
+.content-detail h3,
+.content-detail p  {
+  padding-bottom: 15px;
+}
+
+.content-detail p{
+  line-height: 2rem;
+  padding-bottom: 10px;
+}
+
+.style-genre{
+  display: flex;
+}
+
+.style-genre p{
+  padding-right: 0.2rem;
+
+}
+
+.cart{
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.5;
+  margin-bottom: 20px;
+  font-size: 2rem;
+font-weight: bolder;}
+
+.cart button{
+  padding: 10px;
+  background-color: #00008C;
+  border: 2px solid #00008C;
+  font-size: 1.2rem;
+}
+
+.cart button:hover{
+  background-color: #333;
+  border: 2px solid #334;
+
+  opacity: 1;
 }

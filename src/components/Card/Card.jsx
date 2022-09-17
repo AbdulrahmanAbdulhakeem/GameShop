@@ -1,23 +1,18 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-let newCartArray = []
 
-function Card({game,cartArray,setCartArray}) {
 
-  const handleAddToCart = (productId) => {
-    if(!cartArray.includes(productId)){
-      newCartArray = [...cartArray , productId]
-      setCartArray(newCartArray)
-      console.log(cartArray)
-    }
-  }
+function Card({game,cartArray,setCartArray,handleAddToCart}) {
 
   return (
     <div>
       <div className="card-content">
-        
+      <Link to = {'/detailspage/' + game.id} state ={{handleAddToCart}}>
         <img src={game.background_image} alt={game.name} />
+        </Link>
         <div className='card-details'>
         <div className='name'>
         <h4>{game.name}</h4>
