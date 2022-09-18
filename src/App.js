@@ -24,8 +24,10 @@ function App() {
   } = useFetch(
     `https://api.rawg.io/api/games?key=${process.env.REACT_APP_SECRET_API_KEY}`
   );
-  // console.log(games)
-  return (
+  console.log(games.results)
+  return isPending ?(
+    <h2>Loading ...</h2>
+  ):(
 
     <div className="App">
       

@@ -10,7 +10,7 @@ function Card({game,cartArray,setCartArray,handleAddToCart}) {
   return (
     <div>
       <div className="card-content">
-      <Link to = {'/detailspage/' + game.id} state ={{handleAddToCart}}>
+      <Link to = {'/detailspage/' + game.id} >
         <img src={game.background_image} alt={game.name} />
         </Link>
         <div className='card-details'>
