@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useContext} from "react";
 import { useParams,useNavigate } from "react-router-dom";
 import useFetch from '../../utils/useFetch'
+import {DataContext} from '../../App'
 
 function GameDetailsPage() {
   const [gameData, setgameData] = useState({});
@@ -13,6 +14,7 @@ function GameDetailsPage() {
 
   const {data , isPending , error} = useFetch(`https://api.rawg.io/api/games/${params.detail}?key=${process.env.REACT_APP_SECRET_API_KEY}`)
   console.log(data)
+  // setGenres(data.genres)
 
   // const fetchGame = async () => {
   //   try{
@@ -28,7 +30,9 @@ function GameDetailsPage() {
   //   fetchGame()
   // },[params.detail])
 
-  return(
+  const {handleAddToCart} = useContext(DataContext)
+  return isPending ?(
+    <h2>Loading ...</h2>):(
     <div>
       <div className="game-details">
         <div className="game-img">
@@ -41,7 +45,7 @@ function GameDetailsPage() {
 
           <h2>Genre</h2>
             <div className='style-genre'>
-            {genres.map(genre => (
+            {data.genres.map(genre => (
               <p key = {genre.id}>{genre.name},</p>
             ))}
             </div>
@@ -50,7 +54,13 @@ function GameDetailsPage() {
             <p>${(data.rating + data.rating_top).toFixed(2)}</p>
             <button
              onClick={() => navigate('/')}
-             >Go Home To Add To Cart</button>
+             >Go Back Home</button>
+             <button
+             onClick={(e) => {
+              e.preventDefault()
+              handleAddToCart(data.id)
+             }}
+             >Add To Cart</button>
             </div>
         </div>
       </div>

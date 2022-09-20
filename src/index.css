@@ -110,7 +110,7 @@ span {
 .game-details {
   display: block;
   width: 60%;
-  margin: 3rem auto 0 auto;
+  margin: 0 auto 0 auto;
   line-height: 1.5rem;
   height: 100vh;
 }
@@ -152,15 +152,19 @@ span {
 font-weight: bolder;}
 
 .cart button{
-  padding: 10px;
-  background-color: #00008C;
-  border: 2px solid #00008C;
-  font-size: 1.2rem;
+  padding: 0.5rem;
+  background-color: #333;
+  border: 2px solid #333;
+  font-size: 1rem;
+  margin-left: 1rem;
+  border-radius: 10px;
 }
 
 .cart button:hover{
-  background-color: #333;
-  border: 2px solid #334;
+  background-color: black;
+  border: 2px solid #333;
+  border-radius: 15px;
+  transition: 0.5s;
 
   opacity: 1;
 }
