@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navbar, Home, GameDetailsPage } from "./components";
 import useFetch from "./utils/useFetch";
 import {BrowserRouter  , Routes , Route} from 'react-router-dom'
+import Cart from "./components/Cart/Cart";
 
 export const DataContext = React.createContext();
 
@@ -9,6 +10,8 @@ let newCartArray = []
 
 function App() {
   const[cartArray , setCartArray] = useState([])
+  const[cartTotalArray , setCartTotalArray] = useState([])
+  const[cartBalance, setCartBalance] = useState(0)
 
   const handleAddToCart = (productId) => {
     if(!cartArray.includes(productId)){
@@ -16,6 +19,15 @@ function App() {
       setCartArray(newCartArray)
       console.log(cartArray)
     }
+  }
+
+  const handleCartTotal = (totalArray) => {
+    const totalPrice = totalArray.reduce((acc,cur) => {
+      return acc + cur
+    },0)
+
+    setCartBalance(totalPrice)
+    console.log(totalPrice)
   }
   const {
     error,
@@ -31,12 +43,13 @@ function App() {
 
     <div className="App">
       
-      <DataContext.Provider value={{games,cartArray,setCartArray, handleAddToCart}}>
-        <Navbar />
+      <DataContext.Provider value={{games,cartArray,setCartArray, handleAddToCart,cartTotalArray , setCartTotalArray, handleCartTotal,cartBalance}}>
         <BrowserRouter>
+        <Navbar />
         <Routes>
         <Route path = '/' element = {<Home />} />
         <Route path = '/detailspage/:detail' element={<GameDetailsPage />} />
+        <Route path = '/cart' element = {<Cart />} />
         </Routes>
         </BrowserRouter>
       </DataContext.Provider>
