@@ -2,6 +2,7 @@ import React, { useState, useContext} from "react";
 import { useParams,useNavigate } from "react-router-dom";
 import useFetch from '../../utils/useFetch'
 import {DataContext} from '../../App'
+import {motion} from 'framer-motion'
 
 function GameDetailsPage() {
   const [gameData, setgameData] = useState({});
@@ -33,6 +34,12 @@ function GameDetailsPage() {
   const {handleAddToCart} = useContext(DataContext)
   return isPending ?(
     <h2>Loading ...</h2>):(
+      <motion.div
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:1}}
+    >
     <div>
       <div className="game-details">
         <div className="game-img">
@@ -65,6 +72,7 @@ function GameDetailsPage() {
         </div>
       </div>
     </div>
+    </motion.div>
   ) ;
 }
 

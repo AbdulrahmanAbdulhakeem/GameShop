@@ -153,20 +153,18 @@ span {
 font-weight: bolder;}
 
 .cart button{
-  padding: 0.5rem;
-  background-color: #333;
-  border: 2px solid #333;
-  font-size: 1rem;
-  margin-left: 1rem;
+  padding: 1rem;
+  background-color: #4681f4;
+  margin-right: 2rem;
   border-radius: 10px;
+  color: #fff;
+  font-size: small;
 }
 
 .cart button:hover{
-  background-color: black;
-  border: 2px solid #333;
+  background-color: #4681f3;
   border-radius: 15px;
   transition: 0.5s;
-
   opacity: 1;
 }
 

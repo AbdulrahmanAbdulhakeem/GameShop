@@ -3,6 +3,7 @@ import { Navbar, Home, GameDetailsPage } from "./components";
 import useFetch from "./utils/useFetch";
 import {BrowserRouter  , Routes , Route} from 'react-router-dom'
 import Cart from "./components/Cart/Cart";
+import { AnimatePresence } from "framer-motion";
 
 export const DataContext = React.createContext();
 
@@ -46,11 +47,13 @@ function App() {
       <DataContext.Provider value={{games,cartArray,setCartArray, handleAddToCart,cartTotalArray , setCartTotalArray, handleCartTotal,cartBalance}}>
         <BrowserRouter>
         <Navbar />
+        <AnimatePresence exitBeforeEnter>
         <Routes>
         <Route path = '/' element = {<Home />} />
         <Route path = '/detailspage/:detail' element={<GameDetailsPage />} />
         <Route path = '/cart' element = {<Cart />} />
         </Routes>
+        </AnimatePresence>
         </BrowserRouter>
       </DataContext.Provider>
     </div>

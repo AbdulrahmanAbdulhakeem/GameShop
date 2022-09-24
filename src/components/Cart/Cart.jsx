@@ -3,7 +3,7 @@ import { DataContext } from '../../App'
 import useFetch from '../../utils/useFetch'
 import {Link, useNavigate} from 'react-router-dom'
 import CartItem from './CartItem./CartItem'
-
+import {motion} from 'framer-motion'
 
 
 
@@ -60,7 +60,15 @@ function Cart() {
 
   return (
     <div>
+       <motion.div
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:1.5}}
+    >
       {!cartArray.length ? <EmptyCart /> : <FilledCart />}
+
+      </motion.div>
     </div>
   )
 }
