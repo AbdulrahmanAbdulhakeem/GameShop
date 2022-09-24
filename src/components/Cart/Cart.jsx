@@ -27,7 +27,7 @@ function Cart() {
     <div className='card-container'>
     {cartArray.map((gameId) => (
       <div className='card'>
-      <CartItem id={gameId} total={cartTotalArray} handleCartTotal={handleCartTotal}/>
+      <CartItem id={gameId} total={cartTotalArray} handleCartTotal={handleCartTotal} setCartArray={setCartArray} cartArray={cartArray} setCartTotalArray={setCartTotalArray}/>
       </div>
     ))}
     </div>

@@ -23,6 +23,7 @@ function App() {
   }
 
   const handleCartTotal = (totalArray) => {
+    console.log(totalArray)
     const totalPrice = totalArray.reduce((acc,cur) => {
       return acc + cur
     },0)
@@ -47,7 +48,7 @@ function App() {
       <DataContext.Provider value={{games,cartArray,setCartArray, handleAddToCart,cartTotalArray , setCartTotalArray, handleCartTotal,cartBalance}}>
         <BrowserRouter>
         <Navbar />
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence wait>
         <Routes>
         <Route path = '/' element = {<Home />} />
         <Route path = '/detailspage/:detail' element={<GameDetailsPage />} />

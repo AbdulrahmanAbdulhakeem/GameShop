@@ -9,7 +9,7 @@ function useFetch(url) {
     try{
         const response = await axios.get(url)
         setData(response.data)
-        console.log(response.data)
+        // console.log(response.data)
         setIsPending(false)
     }catch(err){
         setError(err)

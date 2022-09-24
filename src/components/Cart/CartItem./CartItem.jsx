@@ -2,9 +2,10 @@ import React from "react";
 import useFetch from "../../../utils/useFetch";
 import { Link } from "react-router-dom";
 import CloseIcon from '@mui/icons-material/Close';
+import { cardActionAreaClasses } from "@mui/material";
 
 
-function CartItem({ id,total,handleCartTotal }) {
+function CartItem({ id,total,handleCartTotal ,setCartArray,cartArray,setCartTotalArray}) {
   console.log(id);
   const {
     data:game,
@@ -21,6 +22,16 @@ function CartItem({ id,total,handleCartTotal }) {
     console.log(total)
   }
 
+  const handleDelete = (id,itemPrice) => {
+    console.log(id)
+    const newCartArray = cartArray.filter((item) => item !== id)
+    const newTotal = total.filter((price) => price !== itemPrice)
+    setCartArray(newCartArray)
+    setCartTotalArray(newTotal)
+    handleCartTotal(newTotal)
+    // console.log(newCartArray)
+  }
+
   return (
     <>
       <div className="card-content">
@@ -32,10 +43,10 @@ function CartItem({ id,total,handleCartTotal }) {
             <h4>{game.name}</h4>
           </div>
           <div className='cart-icon'>
-          <CloseIcon />
+          <CloseIcon onClick={() => handleDelete(game.id , +price)}/>
           </div>
         </div>
-        <span>${(game.rating + game.rating_top).toFixed(2)}</span>
+        <span>${price}</span>
       </div>
       
       {/* <div className='cart-details'>
