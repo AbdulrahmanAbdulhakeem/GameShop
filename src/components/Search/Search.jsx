@@ -28,7 +28,7 @@ function Search() {
   return isPending ?(
     <h2>Loading</h2>):
     (
-    <div>  
+    <div className='body-container'>  
         <div className="card-container">
             {game && game.results.map((game) => (
              <div className='card' key={game.id}> 

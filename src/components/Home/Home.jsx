@@ -2,10 +2,12 @@ import React , {useContext} from 'react'
 import Card from '../Card/Card'
 import {motion} from 'framer-motion'
 import {DataContext} from '../../App'
+import Footer from '../Footer/Footer'
 
 function Home() {
     const {games,cartArray,setCartArray,handleAddToCart} = useContext(DataContext)
   return (
+    <>
     <motion.div
     animate={{opacity:1}}
     initial={{opacity:0}}
@@ -23,7 +25,10 @@ function Home() {
             ))}
         </div>
     </div>
+    
     </motion.div>
+    <Footer />
+    </>
   )
 }
 

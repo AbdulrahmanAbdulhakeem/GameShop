@@ -14,7 +14,7 @@ function Cart() {
   let navigate = useNavigate()
 
   const EmptyCart = () => (
-    <div>
+    <div style={{margin:'30px'}}>
       You Have No Item In Your Cart , 
       <Link to = '/'>Start Adding Some</Link>
     </div>

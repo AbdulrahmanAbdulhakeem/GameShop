@@ -34,7 +34,7 @@ function Navbar() {
       />
       </form>
       </div>
-      <div className="cart-container">
+      <div className="cart-container" style = {{margin:'20px'}}>
         <Link to ='/cart'>
       <Badge badgeContent={cartArray.length} color="primary">
       <ShoppingBagIcon />
