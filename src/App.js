@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Home, GameDetailsPage } from "./components";
+import { Navbar, Home, GameDetailsPage, Search } from "./components";
 import useFetch from "./utils/useFetch";
 import {BrowserRouter  , Routes , Route} from 'react-router-dom'
 import Cart from "./components/Cart/Cart";
@@ -53,6 +53,7 @@ function App() {
         <Route path = '/' element = {<Home />} />
         <Route path = '/detailspage/:detail' element={<GameDetailsPage />} />
         <Route path = '/cart' element = {<Cart />} />
+        <Route path='/search/:searchresults' element={<Search />} />
         </Routes>
         </AnimatePresence>
         </BrowserRouter>

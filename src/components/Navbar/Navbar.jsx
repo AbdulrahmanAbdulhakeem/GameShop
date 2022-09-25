@@ -1,6 +1,6 @@
 import React,{useState, useContext} from "react";
 import gameLogo from "../../assets/gamepad.jpg";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Badge from '@mui/material/Badge';
 import { DataContext } from "../../App";
@@ -9,6 +9,14 @@ import { DataContext } from "../../App";
 function Navbar() {
   const {cartArray} = useContext(DataContext)
     const [search, setSearch] = useState("");
+    let navigate = useNavigate()
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      navigate('/search/' + search)
+      setSearch('')
+    }
+
   return (
     <div className="navbar">
       <div className="head-container">
@@ -16,7 +24,7 @@ function Navbar() {
         <h3><Link to = '/'>GameShop</Link></h3>
       </div>
       <div className="search-bar">
-      <form>
+      <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search Game"

@@ -6,7 +6,7 @@ import { cardActionAreaClasses } from "@mui/material";
 
 
 function CartItem({ id,total,handleCartTotal ,setCartArray,cartArray,setCartTotalArray}) {
-  console.log(id);
+  // console.log(id);
   const {
     data:game,
     isPending,
